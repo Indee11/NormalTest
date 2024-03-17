@@ -1,0 +1,12 @@
+ [color=black][center]Geometry[/center]
+
+It all started somewhere, when some guy thought "line." From there it was a revolution, how could he possibly think line?
+Either way, we must now learn about lines, sides, and most importantly, triangles. A line is simply a physical representation of the abstract idea of the straight path from a point A, and a point B.
+Do not worry if you don't understand this yet, it isn't in the test.
+A side is simply a surface of a line, and therefore a line has two sides:  1 > | < 2
+With lines, we can make shapes, which is simply a combination of different lines, and different types of lines. Take for example the triangle, which is actually just three lines together, and remember since a line has two sides, a triangle has six.
+The number of sides a shape has is dictated by the formula:
+s = n + 2, where n is the number of lines.
+Now let us go quickly go through some more shapes: Circle, Square, Pentag, Hexag, Septag, Octag, Nonag, and finally the Centag.
+Let us briefly explain circles: They are a circular line, explanation complete.
+[/color]

@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhbpon7i6v24t"]
+
+[ext_resource type="Script" path="res://Scripts/Page.gd" id="1_fp6f7"]
+[ext_resource type="Texture2D" uid="uid://cobomnl0nrtmg" path="res://Sprites/Page.png" id="2_6lyqr"]
+[ext_resource type="AudioStream" uid="uid://ct2skfrm0vxqa" path="res://SFX/PaperPick.wav" id="3_in1ps"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_npj6n"]
+size = Vector2(337, 505)
+
+[node name="Page" type="RigidBody2D" node_paths=PackedStringArray("text")]
+collision_layer = 0
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_fp6f7")
+text = NodePath("RichTextLabel")
+acceleration = 5.0
+angular_acceleration = 1.5
+centre_grab_factor = 0.005
+angular_decceleration = 0.5
+min_time_for_ticker = 40.0
+max_time_for_ticker = 80.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_npj6n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_6lyqr")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -160.0
+offset_top = -244.0
+offset_right = 160.0
+offset_bottom = 244.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 10
+theme_override_font_sizes/bold_font_size = 10
+theme_override_font_sizes/italics_font_size = 10
+theme_override_font_sizes/bold_italics_font_size = 10
+theme_override_font_sizes/mono_font_size = 10
+bbcode_enabled = true
+scroll_active = false
+shortcut_keys_enabled = false
+
+[node name="PaperPick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_in1ps")
+volume_db = -12.0

@@ -1,0 +1,14 @@
+AudioStreamPlayer
+TextureRect
+Control
+Sprite2D
+Label
+TextureButton
+Button
+RichTextLabel
+TextEdit
+CollisionShape2D
+CollisionPolygon2D
+RigidBody2D
+CanvasLayer
+Node2D

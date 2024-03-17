@@ -1,0 +1,106 @@
+[gd_scene load_steps=8 format=3 uid="uid://c74m8cf7dnuwc"]
+
+[ext_resource type="Texture2D" uid="uid://b10a11p0eacff" path="res://Sprites/AnswerCircle.png" id="1_edhfv"]
+[ext_resource type="Script" path="res://Scripts/Answer.gd" id="1_mrscq"]
+[ext_resource type="Texture2D" uid="uid://d0u64m7xtv0cc" path="res://Sprites/FilledAnswerCircle.png" id="2_ojdvk"]
+[ext_resource type="Script" path="res://Scripts/AnswerCircle.gd" id="4_p7y0j"]
+[ext_resource type="AudioStream" uid="uid://oygpjqgfupun" path="res://SFX/PencilCheck.wav" id="5_rw564"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5hihu"]
+font_size = 12
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_3lb0h"]
+random_pitch = 1.1
+random_volume_offset_db = 2.0
+streams_count = 1
+stream_0/stream = ExtResource("5_rw564")
+stream_0/weight = 1.0
+
+[node name="Answer" type="Control" node_paths=PackedStringArray("question_label")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mrscq")
+pressed_texture = ExtResource("2_ojdvk")
+unpressed_texture = ExtResource("1_edhfv")
+question_label = NodePath("Label")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -5.0
+offset_right = 35.0
+offset_bottom = 23.0
+text = "1."
+label_settings = SubResource("LabelSettings_5hihu")
+
+[node name="Answer1" type="TextureButton" parent="." node_paths=PackedStringArray("answer")]
+layout_mode = 0
+offset_left = 16.0
+offset_right = 32.0
+offset_bottom = 16.0
+focus_mode = 0
+toggle_mode = true
+texture_normal = ExtResource("1_edhfv")
+texture_hover = ExtResource("2_ojdvk")
+script = ExtResource("4_p7y0j")
+answer = NodePath("..")
+
+[node name="Answer2" type="TextureButton" parent="." node_paths=PackedStringArray("answer")]
+layout_mode = 0
+offset_left = 48.0
+offset_right = 64.0
+offset_bottom = 16.0
+focus_mode = 0
+toggle_mode = true
+texture_normal = ExtResource("1_edhfv")
+texture_hover = ExtResource("2_ojdvk")
+script = ExtResource("4_p7y0j")
+answer_id = 1
+answer = NodePath("..")
+
+[node name="Answer3" type="TextureButton" parent="." node_paths=PackedStringArray("answer")]
+layout_mode = 0
+offset_left = 80.0
+offset_right = 96.0
+offset_bottom = 16.0
+focus_mode = 0
+toggle_mode = true
+texture_normal = ExtResource("1_edhfv")
+texture_hover = ExtResource("2_ojdvk")
+script = ExtResource("4_p7y0j")
+answer_id = 2
+answer = NodePath("..")
+
+[node name="Answer4" type="TextureButton" parent="." node_paths=PackedStringArray("answer")]
+layout_mode = 0
+offset_left = 112.0
+offset_right = 128.0
+offset_bottom = 16.0
+focus_mode = 0
+toggle_mode = true
+texture_normal = ExtResource("1_edhfv")
+texture_hover = ExtResource("2_ojdvk")
+script = ExtResource("4_p7y0j")
+answer_id = 3
+answer = NodePath("..")
+
+[node name="Answer5" type="TextureButton" parent="." node_paths=PackedStringArray("answer")]
+layout_mode = 0
+offset_left = 144.0
+offset_right = 160.0
+offset_bottom = 16.0
+focus_mode = 0
+toggle_mode = true
+texture_normal = ExtResource("1_edhfv")
+texture_hover = ExtResource("2_ojdvk")
+script = ExtResource("4_p7y0j")
+answer_id = 4
+answer = NodePath("..")
+
+[node name="PencilCheck" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_3lb0h")
+volume_db = -10.0

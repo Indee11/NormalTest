@@ -1,0 +1,33 @@
+ [color=black][center]maths test[/center]
+
+9. If I chop you up in a meat-grinder, and the only thing that comes out that is left of you is your eyeball, use the formula 4 + 3 * (r / r), where r = 7, to calculate your remaining surface area.
+ A. 20
+ B. 2
+ C. 12
+ D. 19
+ E. 7
+
+10. How many sides are on a septag?
+ A. 7
+ B. 14
+ C. 9
+ D. 12
+ E. 4
+
+11. Are you grateful?
+ A. 
+ B. 
+ C. Yes
+ D. 
+ E. 
+
+12. Should you be here?
+ A. Yes.
+ B. No.
+ C. Maybe.
+ D. So.
+ E. Help.
+
+
+[right]3[/right]
+[/color]

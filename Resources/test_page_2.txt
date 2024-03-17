@@ -1,0 +1,35 @@
+ [color=black][center]maths test[/center]
+
+5. Which of the following is not true?
+ A. True
+ B. True
+ C. True
+ D. False
+ E. True
+
+6. Guess:
+ A. 1
+ B. 2
+ C. 3
+ D. 4
+ E. 5
+
+7. Is the following correct: you are from this dimension.
+ A. True
+ B. True
+ C. True
+ E. False
+ D. True
+
+8. What the dog doing?
+ A. Chasing a ball
+ B. Calculating pi to 8 digits
+ C. Being a good boy
+ D. Learning calculus
+ E. Eating a cat
+
+
+
+
+[right]2[/right]
+[/color]

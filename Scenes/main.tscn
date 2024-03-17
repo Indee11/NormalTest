@@ -1,0 +1,373 @@
+[gd_scene load_steps=19 format=3 uid="uid://dgewrbb5mqm01"]
+
+[ext_resource type="Texture2D" uid="uid://712jwr028bjo" path="res://Sprites/TestTable.png" id="1_b8fjk"]
+[ext_resource type="Script" path="res://Scripts/PageParent.gd" id="1_qpkjl"]
+[ext_resource type="PackedScene" uid="uid://bhbpon7i6v24t" path="res://PackedScenes/page.tscn" id="1_ttu00"]
+[ext_resource type="Script" path="res://Scripts/AnswerSheet.gd" id="3_uw48w"]
+[ext_resource type="Texture2D" uid="uid://ciy3dx0rrsnx5" path="res://Sprites/AnswerSheetTab.png" id="4_hi0p2"]
+[ext_resource type="Texture2D" uid="uid://cobomnl0nrtmg" path="res://Sprites/Page.png" id="5_mey6j"]
+[ext_resource type="PackedScene" uid="uid://c74m8cf7dnuwc" path="res://PackedScenes/answer.tscn" id="6_l1df1"]
+[ext_resource type="Texture2D" uid="uid://dtg0moi8kk6ux" path="res://Sprites/SubmitButton.png" id="8_qv2xe"]
+[ext_resource type="Script" path="res://Scripts/EndScreen.gd" id="9_1hcma"]
+[ext_resource type="Texture2D" uid="uid://d0q5f874jo3e0" path="res://Sprites/PauseIcon.png" id="9_2v5p6"]
+[ext_resource type="Script" path="res://Scripts/PauseMenu.gd" id="9_7tkt2"]
+[ext_resource type="Script" path="res://Scripts/Timer.gd" id="9_hiy8p"]
+[ext_resource type="AudioStream" uid="uid://doinynkjt6373" path="res://SFX/ClockTickFull.wav" id="9_j3wl8"]
+[ext_resource type="Texture2D" uid="uid://mow0nx6pp4fv" path="res://Sprites/Clock.png" id="10_chswk"]
+[ext_resource type="Texture2D" uid="uid://6i1rn183aexx" path="res://Sprites/ClockHand.png" id="11_8qhlh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ey7hk"]
+font_size = 14
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4bp3y"]
+font_size = 12
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_yrj7w"]
+font_size = 12
+font_color = Color(0, 0, 0, 1)
+
+[node name="Main" type="Node2D"]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="AnswerSheet" type="Control" parent="UI" node_paths=PackedStringArray("answers", "end_screen", "page_parent")]
+layout_mode = 3
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -37.0
+offset_top = -20.0
+offset_right = 3.0
+offset_bottom = 20.0
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("3_uw48w")
+slide_timer = 0.5
+out_x = 336.0
+answers = [NodePath("Answer"), NodePath("Answer2"), NodePath("Answer3"), NodePath("Answer4"), NodePath("Answer5"), NodePath("Answer6"), NodePath("Answer7"), NodePath("Answer8"), NodePath("Answer9"), NodePath("Answer10"), NodePath("Answer11"), NodePath("Answer12")]
+end_screen = NodePath("../EndScreen")
+page_parent = NodePath("../../PageParent")
+
+[node name="Tab" type="TextureButton" parent="UI/AnswerSheet"]
+layout_mode = 0
+offset_top = -252.0
+offset_right = 24.0
+offset_bottom = 252.0
+focus_mode = 0
+texture_normal = ExtResource("4_hi0p2")
+texture_pressed = ExtResource("4_hi0p2")
+texture_hover = ExtResource("4_hi0p2")
+texture_disabled = ExtResource("4_hi0p2")
+texture_focused = ExtResource("4_hi0p2")
+
+[node name="Label" type="Label" parent="UI/AnswerSheet/Tab"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 303.0
+offset_right = 95.0
+offset_bottom = 326.0
+rotation = 4.71238
+text = "Answer Sheet"
+label_settings = SubResource("LabelSettings_ey7hk")
+
+[node name="Sheet" type="TextureRect" parent="UI/AnswerSheet"]
+layout_mode = 0
+offset_left = -336.0
+offset_top = -252.0
+offset_bottom = 252.0
+texture = ExtResource("5_mey6j")
+
+[node name="Answer" parent="UI/AnswerSheet" instance=ExtResource("6_l1df1")]
+layout_mode = 1
+offset_left = -319.0
+offset_top = -233.0
+offset_right = -319.0
+offset_bottom = -233.0
+correct_answer = 2
+
+[node name="Answer2" parent="UI/AnswerSheet" instance=ExtResource("6_l1df1")]
+layout_mode = 1
+offset_left = -319.0
+offset_top = -209.0
+offset_right = -319.0
+offset_bottom = -209.0
+question_id = 1
+correct_answer = 4
+
+[node name="Answer3" parent="UI/AnswerSheet" instance=ExtResource("6_l1df1")]
+layout_mode = 1
+offset_left = -319.0
+offset_top = -185.0
+offset_right = -319.0
+offset_bottom = -185.0
+question_id = 2
+
+[node name="Answer4" parent="UI/AnswerSheet" instance=ExtResource("6_l1df1")]
+layout_mode = 1
+offset_left = -319.0
+offset_top = -161.0
+offset_right = -319.0
+offset_bottom = -161.0
+question_id = 3
+correct_answer = 3
+
+[node name="Answer5" parent="UI/AnswerSheet" instance=ExtResource("6_l1df1")]
+layout_mode = 1
+offset_left = -319.0
+offset_top = -137.0
+offset_right = -319.0
+offset_bottom = -137.0
+question_id = 4
+correct_answer = 3
+
+[node name="Answer6" parent="UI/AnswerSheet" instance=ExtResource("6_l1df1")]
+layout_mode = 1
+offset_left = -319.0
+offset_top = -113.0
+offset_right = -319.0
+offset_bottom = -113.0
+question_id = 5
+correct_answer = 3
+
+[node name="Answer7" parent="UI/AnswerSheet" instance=ExtResource("6_l1df1")]
+layout_mode = 1
+offset_left = -319.0
+offset_top = -89.0
+offset_right = -319.0
+offset_bottom = -89.0
+question_id = 6
+correct_answer = 5
+
+[node name="Answer8" parent="UI/AnswerSheet" instance=ExtResource("6_l1df1")]
+layout_mode = 1
+offset_left = -319.0
+offset_top = -65.0
+offset_right = -319.0
+offset_bottom = -65.0
+question_id = 7
+correct_answer = 2
+
+[node name="Answer9" parent="UI/AnswerSheet" instance=ExtResource("6_l1df1")]
+layout_mode = 1
+offset_left = -319.0
+offset_top = -41.0
+offset_right = -319.0
+offset_bottom = -41.0
+question_id = 8
+correct_answer = 2
+
+[node name="Answer10" parent="UI/AnswerSheet" instance=ExtResource("6_l1df1")]
+layout_mode = 1
+offset_left = -319.0
+offset_top = -17.0
+offset_right = -319.0
+offset_bottom = -17.0
+question_id = 9
+correct_answer = 1
+
+[node name="Answer11" parent="UI/AnswerSheet" instance=ExtResource("6_l1df1")]
+layout_mode = 1
+offset_left = -319.0
+offset_top = 7.0
+offset_right = -319.0
+offset_bottom = 7.0
+question_id = 10
+correct_answer = -1
+
+[node name="Answer12" parent="UI/AnswerSheet" instance=ExtResource("6_l1df1")]
+layout_mode = 1
+offset_left = -319.0
+offset_top = 31.0
+offset_right = -319.0
+offset_bottom = 31.0
+question_id = 11
+correct_answer = 4
+
+[node name="TextureButton" type="TextureButton" parent="UI/AnswerSheet"]
+layout_mode = 0
+offset_left = -207.0
+offset_top = 214.0
+offset_right = -127.0
+offset_bottom = 234.0
+texture_normal = ExtResource("8_qv2xe")
+texture_pressed = ExtResource("8_qv2xe")
+texture_hover = ExtResource("8_qv2xe")
+texture_disabled = ExtResource("8_qv2xe")
+texture_focused = ExtResource("8_qv2xe")
+
+[node name="Label" type="Label" parent="UI/AnswerSheet/TextureButton"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 2.0
+offset_right = 61.0
+offset_bottom = 25.0
+text = "Submit"
+label_settings = SubResource("LabelSettings_4bp3y")
+
+[node name="Timer" type="Control" parent="UI/AnswerSheet" node_paths=PackedStringArray("answer_sheet")]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+script = ExtResource("9_hiy8p")
+max_time = 460.0
+answer_sheet = NodePath("..")
+
+[node name="Clock" type="TextureRect" parent="UI/AnswerSheet/Timer"]
+layout_mode = 0
+offset_left = -207.0
+offset_top = 257.0
+offset_right = -127.0
+offset_bottom = 337.0
+texture = ExtResource("10_chswk")
+
+[node name="Hand" type="TextureRect" parent="UI/AnswerSheet/Timer"]
+layout_mode = 0
+offset_left = -171.0
+offset_top = 257.0
+offset_right = -163.0
+offset_bottom = 297.0
+pivot_offset = Vector2(4, 40)
+texture = ExtResource("11_8qhlh")
+
+[node name="Tick" type="AudioStreamPlayer" parent="UI/AnswerSheet/Timer"]
+stream = ExtResource("9_j3wl8")
+
+[node name="EndScreen" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -760.0
+offset_right = 20.0
+offset_bottom = -720.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("9_1hcma")
+
+[node name="TextureRect" type="TextureRect" parent="UI/EndScreen"]
+layout_mode = 0
+offset_left = -168.0
+offset_top = -252.0
+offset_right = 168.0
+offset_bottom = 252.0
+texture = ExtResource("5_mey6j")
+
+[node name="Answers" type="Label" parent="UI/EndScreen"]
+layout_mode = 0
+offset_left = -159.0
+offset_top = -241.0
+offset_right = 159.0
+offset_bottom = -217.0
+text = "You got: x / x"
+label_settings = SubResource("LabelSettings_yrj7w")
+horizontal_alignment = 1
+
+[node name="Comment" type="Label" parent="UI/EndScreen"]
+layout_mode = 0
+offset_left = -159.0
+offset_top = -215.0
+offset_right = 159.0
+offset_bottom = 23.0
+text = "Teachers comment: 
+You didn't even answer all the questions?"
+label_settings = SubResource("LabelSettings_yrj7w")
+
+[node name="TryAgain" type="TextureButton" parent="UI/EndScreen"]
+layout_mode = 0
+offset_left = -40.0
+offset_top = 196.0
+offset_right = 40.0
+offset_bottom = 236.0
+texture_normal = ExtResource("8_qv2xe")
+texture_pressed = ExtResource("8_qv2xe")
+texture_hover = ExtResource("8_qv2xe")
+texture_disabled = ExtResource("8_qv2xe")
+texture_focused = ExtResource("8_qv2xe")
+
+[node name="Label" type="Label" parent="UI/EndScreen/TryAgain"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 1.0
+offset_right = 70.0
+offset_bottom = 24.0
+text = "Try again?"
+label_settings = SubResource("LabelSettings_yrj7w")
+
+[node name="PauseMenu" type="Control" parent="UI"]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("9_7tkt2")
+
+[node name="TextureRect" type="TextureRect" parent="UI/PauseMenu"]
+layout_mode = 0
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 60.0
+offset_bottom = 60.0
+texture = ExtResource("9_2v5p6")
+
+[node name="TestTable" type="Sprite2D" parent="."]
+texture = ExtResource("1_b8fjk")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="PageParent" type="Node2D" parent="." node_paths=PackedStringArray("answer_page")]
+script = ExtResource("1_qpkjl")
+answer_page = NodePath("../UI/AnswerSheet")
+
+[node name="Test3" parent="PageParent" instance=ExtResource("1_ttu00")]
+position = Vector2(400, -641)
+file_path = "test_page_3"
+
+[node name="Test2" parent="PageParent" instance=ExtResource("1_ttu00")]
+position = Vector2(400, -641)
+file_path = "test_page_2"
+
+[node name="Test1" parent="PageParent" instance=ExtResource("1_ttu00")]
+position = Vector2(400, -641)
+file_path = "test_page_1"
+
+[node name="UnintentionalBlank" parent="PageParent" instance=ExtResource("1_ttu00")]
+position = Vector2(-396, -641)
+file_path = "unintentional_blank"
+
+[node name="Intentional" parent="PageParent" instance=ExtResource("1_ttu00")]
+position = Vector2(-396, -641)
+file_path = "intentional_blank"
+
+[node name="Algebra" parent="PageParent" instance=ExtResource("1_ttu00")]
+position = Vector2(-396, -641)
+file_path = "algebra_page"
+
+[node name="Geometry" parent="PageParent" instance=ExtResource("1_ttu00")]
+position = Vector2(-396, -641)
+file_path = "geometry_page"
+
+[node name="DimensionTravellersNote" parent="PageParent" instance=ExtResource("1_ttu00")]
+position = Vector2(0, -641)
+file_path = "dimension_travellers_note"
+
+[connection signal="button_down" from="UI/AnswerSheet/Tab" to="UI/AnswerSheet" method="on_tab_pressed"]
+[connection signal="mouse_entered" from="UI/AnswerSheet/Tab" to="PageParent" method="set_to_ui_priority"]
+[connection signal="mouse_exited" from="UI/AnswerSheet/Tab" to="PageParent" method="set_to_page_priority"]
+[connection signal="button_down" from="UI/AnswerSheet/TextureButton" to="UI/AnswerSheet" method="grade_test"]
+[connection signal="button_down" from="UI/AnswerSheet/TextureButton" to="UI/AnswerSheet/Timer" method="test_graded"]
+[connection signal="button_down" from="UI/EndScreen/TryAgain" to="UI/EndScreen" method="try_again_pressed"]
